@@ -1,0 +1,88 @@
+
+
+
+Link: https://www.youtube.com/watch?v=1F_OgqRuSdI&list=PL0-84-yl1fUnRuXGFe_F7qSH1LEnn9LkW
+
+=============================================================================
+
+[-] Automate The Boring Stuff With Python
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[A]  Expressions, Datatypes and Variables
+
+1. Expression: python evaluates to a single value
+
+	-> 2 + 2 gives you 4
+	-> 2 gives you 2
+	-> 3 * 7 gives you 21
+	-> 2 + 3 * 6 gives you 20
+	-> (2 + 3) * 6 gives you 30
+
+2. Data Types: float, int, string
+
+ 	float (4.0, 42.1, 45.0)
+	int (1, 24, 65, 70)
+	sting( 'Hello', '42', '65', Hi how are you')
+
+	Concatnate:
+		'Hello' + 'Alice'  gives you HelloAlice
+	String Replication:
+		'Alice' * 3 gives you AliceAliceAlice
+		'Hello' + '!' * 10 gives you Hello!!!!!!!!!!
+
+3. Variables: memory for storing values
+	spam = 42 (spam is variable describing the value)
+
+    A variable can be <overriden> giving a new value:
+		spam = 'Hello'  will replace the value 42
+
+[* ?? *] 
+If a python instruction evaluates to a single value it is an < expression > otherwise it is a statement:
+
+    A variable can be used by itself:
+		spam = 10
+		spam = spam + 2   the new value of spam is 12
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[B]
+
+-> In python, instructions are executed from the top of the file downwards. 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[C] Flow Charts
+
+-> Shows a decision making process, determining which processes to execute under whch conditions.
+
+-> Comparison operators: They evaluate to a bool value (True or False)
+	== ( Equal to )
+	!= ( Not Equal TO )
+	<  ( Less Than )
+	>  ( Greater Than )
+	<= ( Less Than or Equal To )
+	>= ( Greater Than or Equal To )
+
+-> "and" (&)  "or" (||)  "not" Boolean Operators < T True   F False >
+
+not true -> False
+not false -> True
+
+T & T -> True
+T & F -> False
+F & T -> False
+F & F -> False
+
+T || T -> True
+T || F -> True
+F || T -> True
+F || F -> False
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[C] Flow Control Statement
+
+=============================================================================
+
+[-] Data Structures and Algorithms with Python
