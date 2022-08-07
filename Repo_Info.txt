@@ -11,6 +11,8 @@ Link: https://www.youtube.com/watch?v=1F_OgqRuSdI&list=PL0-84-yl1fUnRuXGFe_F7qSH
 
 [A]  Expressions, Datatypes and Variables
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 1. Expression: python evaluates to a single value
 
 	-> 2 + 2 gives you 4
@@ -54,6 +56,8 @@ If a python instruction evaluates to a single value it is an < expression > othe
 
 [C] Flow Charts
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 -> Shows a decision making process, determining which processes to execute under whch conditions.
 
 -> Comparison operators: They evaluate to a bool value (True or False)
@@ -81,7 +85,369 @@ F || F -> False
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-[C] Flow Control Statement
+[D] Flow Control 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-> Shows a decision making process, determining which processes to execute under whch conditions.
+
+-> Comparison operators: They evaluate to a bool value (True or False)
+	== ( Equal to )
+	!= ( Not Equal TO )
+	<  ( Less Than )
+	>  ( Greater Than )
+	<= ( Less Than or Equal To )
+	>= ( Greater Than or Equal To )
+
+-> Boolean Operators < T True   F False >
+	"and" (&)  "or" (||)  "not" 
+
+not true -> False
+not false -> True
+
+T & T -> True
+T & F -> False
+F & T -> False
+F & F -> False
+
+T || T -> True
+T || F -> True
+F || T -> True
+F || F -> False
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[E] Flow Control Statement  ( if, elif and else )
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-> Code:
+ 
+name = 'Alice'
+if name == 'Alice':
+	print('Hi Alice')
+print('Done')
+
+
+- Checks condition whether true or false, since true print = 'Alice'
+- When name is not Alice, print done
+
+
+
+-> Code:
+
+pswd = 'cat23'
+if pswd = 'cat23':
+	print('Access Granted')
+else:
+	print('Access Denied')
+
+
+Output: Access Granted
+
+- When condition is true if block executed
+- When condition not true, else block executed
+
+
+-> Code
+
+name = 'Bob'
+age = 300
+
+if name == 'Alice':
+	print('Hi Alice')
+elif age < 12:
+	print('Not Alice')
+elif age > 200:
+	print('Alice is not a vampire')
+elif age > 20:
+	print('Alice is a teen')
+
+
+Output: Alice is not a vampire
+
+- False condition blocks are skipped
+- The first True condition block is executed
+	
+
+
+-> Code
+
+print('Enter a name: ')
+name = input()
+if name:
+	print('You have entered a name')
+else:
+	print('You should enter a name')
+
+- When name variable is not empty Hence True, execute if block
+- when name variable is empty, The bool is False execute else block
+
+[-] <NB>
+
+- if statement used to conditionaly execute code depending whether if statement is True or Flase.
+- elif (else if) block is executed when all other conditions before i are False
+- else block is executed when all other conditions before it a re False
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[F] while Loops
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Make a condition or block execute over and over as long as the while statement is true. (This is called an itteration)
+- ( break ) Statement
+- ( continue ) statement
+
+-> Code
+
+spam = 0
+while spam < 5:
+	print('Hello World')
+	spam = spam + 1
+
+Output: spam is 0, This will increment spam by 1 as it print('Hello World')
+	0 < 5 Hello World
+	1 < 5 Hello World
+	2 < 5 Hello World
+	3 < 5 Hello World
+	4 < 5 Hello World
+	
+	It is said that the while loop iterates 5 times
+	The code checks whether the condition is True to execute block, when condition is False the code continues whith th rest of program. 
+
+
+-> Code
+
+name = ''
+while name != 'Your Name'
+	print('Please type Your Name')
+	name = input()
+print('Thank You')
+
+- Blank string is not Your Name
+- This code requires an entry from user, it will loop until the name variable is 'Your Name'
+
+
+-> Code [Infonite Loops]
+
+while True:
+	print('Hello!')
+
+- The condition True is always True, hence the loop will never stop executing.
+
+
+-> Code [break] 
+
+	- causes execution to move beyond while loop.
+name = ''
+while True:
+	print('Please enter Your Name')
+	name = input()
+	if name == 'Your Name':
+		break
+print('The name is Correct')
+
+- The condition is alwasy True, so we use if condition to check input then leaves the loop when satisfied. 
+
+
+
+-> Code [continue] 
+
+	- causes execution to jump a condition and goes to start of loop and reavaluate the loops condition.
+
+spam = 0
+while spam < 5:
+	spam = spam + 1
+	if spam == 3:
+		continue
+	print('Spam is ' + str(spam))
+
+- Output:
+	0 < 5 Hence Spam is 1
+	1 < 5 Hence Spam is 2
+	2 < 5 Hence Spam is 4
+	4 < 5 Hence Spam is 5
+	
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[G] for Loops
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Iterate a number of times when using the range argument
+- range (101) goes upto but not including the number 101; (so upto 100)
+
+- for i in range (5):  (loops five times and i is initially 0)
+
+	range(10) => range(0, 10) => 0 to 9 which are ten values
+	range(12, 16) => 12 to 15 which is {16-12 = 4 values from 12} 
+
+	range(0, 10, 2) increment by 2
+
+	range(5, -1, -1) decrement by -1
+
+-> Code (total sum of numbers between 0 and 100)
+
+total = 0
+for num in range(101):
+	total = total + num
+print(total)
+
+- Output = 5050
+- There are a 100 iterations
+
+- Code <While Loop Equivalent>
+
+total = 0
+num = 0
+while num < 101:
+	total = total + num
+	num = num + 1
+print(str(total))
+	
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[H] Built in Functions and Modules Standard Library
+	
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[G] Functions, Non Value and Key Word Arguments
+
+- Parameter => Values passed in a function
+- Arguments => Values passed in a function call
+
+def number(num_1, num_2): => params
+	pass
+
+number (1, 2) => agrs
+
+- None => is the only value of None data type, represent lack of a value.
+
+eg. 
+spam = print()
+spam
+
+- This will return None because in this case spam == None is True
+- For a function without return statement, the return value is None
+
+
+- Key Word Arguments like 'end' or 'sep'
+
+print('Hello ', end= '')
+print(World)
+
+Output will be on the same line: Hello World
+
+print('Hello', 'World' sep='to')  Output: HellotoWorld
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[I] Global and Local Scope
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Global -> Exists outside a function 
+
+Local -> Exists inside a function
+
+- Code in a global scope cannot use any local variables.
+- Code in a local scope can access global variables.
+- Code in a function's local scope cannot use variables in another local scope 
+
+- The Idea is to separate the local variable of a function from the global variables 
+
+-> Code
+
+def spam():
+	eggs = 'Hello'
+	print(eggs)
+
+eggs = 42
+spam()
+print(eggs)
+
+
+Output: Hello
+	42
+
+
+-> Code
+
+def spam():
+	global eggs # This eggs is global variable
+	eggs = 'Hello'
+	print(eggs)
+
+eggs = 42
+spam()
+print(eggs)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[J] Try and Except Statements
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Keeps the program from crashing as errors cause programs to crash.
+- You may not need to specify a specific error and it may still catch error
+
+- An error happening in the try block, code can handle error or display a msg to user to avoid crashing the program.
+
+-> Code
+
+def divide42 (divby):
+	try:
+		return 42 / divby
+	except ZeroDivisionError: #Catch the error when value is zero
+		print("Error: You tried dividing by Zero")
+
+print(divide42(2))
+print(divide42(12))
+print(divide42(0))
+print(divide42(1))
+
+- Output will catch the division by zero.
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[K] Guess The number program:
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+import random
+
+print('Hello, what is your name?')
+name = input()
+secNumber = random.randint(1, 20)
+print('Well, ' + name + ' I am thinking of a number between 1 and 20')
+
+# Player Takes 6 guesses
+
+for guessTaken in range(1, 7):
+	print('Take Guess')
+	guess = int(input())
+	if guess < secNumber:
+		print('The guess is lower than the number I am thinking of')
+	elif guess > secNumber:
+		print('The guess is higher than the number I am thinking of')
+	else:
+		break # condition is correct guess
+
+if guess == secNumber:
+	print('Good Job ' + name + '! your guess is correct in ' + str(guessTaken) + ' guesses.')
+else:
+	print('Sorry, the number I was thinking of is ' str(secNumber))
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[L] Lists:
 
 =============================================================================
 
