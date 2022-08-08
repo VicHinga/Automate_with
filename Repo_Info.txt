@@ -447,8 +447,222 @@ else:
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-[L] Lists:
+[K] Lists: A Value that conains multiple values
 
-=============================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-[-] Data Structures and Algorithms with Python
+-> Values in list are called items
+-> Index evaluates to a single value in the list
+-> Slice evaluates to a new list
+
+-> New values can be set to a list using indexes
+
+=> list = ['cat', 'rat', 'bat']
+
+	- list[0] gives 'cat'
+	- list[1] gives 'rat' 
+
+	- list[-1] gives 'bat'
+	- list[-2] gives 'rat'
+
+
+
+=> 2lists = [['cat','bat'],['mouse','mole'], [0, 1, 2, 3]]
+
+	- 2list[0] gives ['cat','bat']
+	- 2list[0][1] gives 'bat'
+
+	print('The ' + 2list[1][0] +' is afraid of the ' + 2list[0][0])
+	=> The mouse is afraid of the cat
+
+
+
+-> Slice:
+	list = ['cat', 'rat', 'bat', 'mouse', 'mole']
+
+	list[1:3] => Starts at 1 and goes upto but does not include the index at 3
+	list[1:3] => ['rat','bat']
+	list[:2] => ['cat','rat'] <starts at 0, and end b4 index 2>
+	list[1:] => ['rat', 'bat', 'mouse', 'mole']
+
+
+
+-> Delete using del statement:
+	list = ['cat', 'rat', 'bat', 'mouse', 'mole']
+	
+	del list[1]
+	list = ['cat', 'bat', 'mouse', 'mole']
+
+
+-> Length of list
+	list = ['cat', 'rat', 'bat', 'mouse', 'mole']	
+	
+	len(list) gives 5
+
+
+-> List replicationa and concatnation
+	list_1 = [1, 2, 3]
+	list_2 = [4, 5, 6]
+
+	list_3 = list_1 + list_2 gives you => [1, 2, 3, 4, 5, 6]
+	list_4 = list_1 * 3 gives you => [1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+
+-> List Function
+	list('Hello') => Gives you ['H', 'e', 'l', 'l', 'o']
+
+
+
+-> Value in or not in a list using ('in' or 'not in')
+	list = ['cat', 'rat', 'bat', 'mouse', 'mole']
+	
+	'bat' in list => Gives You True
+	'dog' in list => Gives You False
+
+	'bat' not in list => Gives You False
+	'dog' not in list => Gives You True
+	
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[L] for loops with lists, multiple assignment, augmented assignment operators:
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-> Range object and List-like value
+	range(4) => range(0,4)  Equivalent to [0, 1, 2, 3]
+
+	- list(range(4)) Gives you [0, 1, 2, 3]
+	
+	- for i in range(4):
+		print(i)
+			=> gives you 0,1,2,3
+
+	- for i in [0, 1, 2, 3]:
+		print(i)
+			=> gives you 0, 1, 2, 3
+
+
+-> Example: When you need both the index and the values of a list
+
+	supplies = ['pens', 'staplers', 'computers', 'clip-boards', 'pins']
+
+	for i in the range(len(supplies)):
+		print('Index ' + str(i) + ' in supplies is: ' + supplies[i])
+	
+	Gives You:
+		Index 0 in supplies is: pens
+		Index 1 in supplies is: staplers
+		Index 2 in supplies is: computers
+		Index 3 in supplies is: clip-boards
+		Index 4 in supplies is: pins
+
+
+
+-> Multiple Assignment Example: 
+
+	dog = ['black', 'fast', 'dangerous']
+
+	colour, speed, character = dog
+
+	- colour Gives you black
+	- speed Gives you fast
+	- character Gives you dangerous	
+
+
+	colour, speed, character = 'black', 'fast', 'dangerous'
+
+	Given: Try and swap the values
+		a = 'AAA'
+		b = 'BBB'
+
+	Execute: a, b = b, a
+
+	Output:
+		a = 'BBB'
+		b = 'AAA'	
+
+
+
+-> Augmented Assignment Operators Example:
+
+	spam += 1 => spam = spam + 1
+	spam -= 1 => spam = spam - 1 
+	spam *= 1 => spam = spam * 1
+	spam /= 1 => spam = spam / 1
+	spam %= 1 => spam = spam % 1
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[M] Methods, and the List Methods:
+	index(), append(), insert(), remove(), sort()
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Method is passed the object on which it is called
+- Mehtod cannot be called by itself as opposed to a function
+	eg. index('Hello') will result in an error
+
+
+- index() Method Example:
+	spam = ['Hi', 'Hello', 'Wasap']
+
+	spam.index('Hello')
+
+- append() Method Example:
+	spam = ['cat', 'lion', 'leopard']
+
+	spam.append('panther')
+
+	spam
+	['cat', 'lion', 'leopard', 'panther']
+
+
+- insert() Method Example:
+	spam = ['cat', 'lion', 'leopard', 'panther']
+	
+	spam.insert(1, 'tiger')
+
+	spam
+	['cat', 'tiger', 'lion', 'leopard', 'panther']
+
+- remove() Method Example:
+	spam = ['cat', 'tiger', 'lion', 'leopard', 'panther']
+
+	spam.remove('cat')
+
+	spam
+	['tiger', 'lion', 'leopard', 'panther']	
+
+- sort() Method Example:
+	spam = [2, 5, 3, 1, -7]
+	
+	spam.sort()
+	
+	spam
+	[-7, 1, 2, 3, 5]
+
+
+
+	spam = ['cat', 'tiger', 'lion', 'leopard', 'panther']
+	
+	
+	spam.sort(key=str.lower) 
+		# Will arange using 'Alphabetical' order
+
+	spam.sort() 
+		# Will arange using 'ASCII-betical' order
+
+	spam
+	['cat', 'leopard', 'Lion', 'panther', 'tiger']
+
+	
+	spam =	['cat', 'Lion','leopard',  'panther', 'tiger']
+	# Lion has 'i' should come after leopard with 'e' though Lion has capital 'L'
+	# Upper case characters come first while Lower case characters come last
+	
+	spam.sort(reverse=True)	
+	
+	['tiger', 'panther', 'lion', 'leopard', 'cat']
+
